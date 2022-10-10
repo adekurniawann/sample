@@ -2,6 +2,7 @@
 Saya tidak menggunakan cluster k8s pribadi sehingga tidak ada proses deployment ke cluster, saya hanya integrasi dari github ke cluter dan melakukan test koneksi. jadi saya mohon untuk tidak mengotak-atik repo dan share repo ke orang lain karena ini merupakan tanggup jawab saya. Terimakasih
 
 ## Getting started
+###### Cicd berjalan di branch staging
 1. Membuat simple App menggunakan Go di file main.go, app ini hanya menampilkan Text
 2. Pada awalnya saya ingin menerapkan cicd menggunakan tools jenkins dengan konsep shared library. Namun karena keterbatasan server jenkins jadi saya menggunakan github action sebagai pengganti.
 3. Untuk menggunakan github action diperlukan direktory .github/workflows/ sebagai tempat menyimpan scirpt pipeline. Dalam hal ini saya membuat beberapa stage seperti checkoutcode, build images, push images, deploy to k8s. Semua stage saya simpan pada file cicd.yml di direktory .github/workflows/.
