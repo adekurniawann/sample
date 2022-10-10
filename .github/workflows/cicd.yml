@@ -30,6 +30,11 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/cicd-repos:latest
       - 
+        name: deploy
+        uses: tale/kubectl-action@v1
+        with:
+          base64-kube-config: ${{ secrets.KUBE_CONFIG }}
+      - 
         name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
