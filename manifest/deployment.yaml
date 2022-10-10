@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: sample-app
+  template:
+    metadata:
+      labels:
+        name: sample-app
+    spec:
+      containers:
+      - name: application
+        image: adeekur861/cicd-repos:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 3000
