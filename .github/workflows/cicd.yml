@@ -38,6 +38,7 @@ jobs:
       -
         name : Deploy
         run: |
+          cd manifest
           ls
           kubectl get ns
         
