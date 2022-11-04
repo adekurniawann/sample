@@ -1,6 +1,6 @@
 ## We specify the base image we need for our
 ## go application
-FROM golang:1.12.0-alpine3.9
+FROM golang:latest
 ## We create an /app directory within our
 ## image that will hold our application source
 ## files
@@ -14,6 +14,13 @@ ADD . /app
 WORKDIR /app
 ## we run go build to compile the binary
 ## executable of our Go program
+RUN apt-get update
+RUN apt-get upgrade -y
+
+ENV GOBIN /go/bin
+
+RUN go get github.com/go-sql-driver/mysql
+
 RUN go build -o main .
 ## Our start command which kicks off
 ## our newly created binary executable
