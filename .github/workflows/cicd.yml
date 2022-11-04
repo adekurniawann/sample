@@ -4,7 +4,7 @@ name: demo-ci-cd
 on:
   push:
     branches:
-      - 'staging'
+      - 'master'
 jobs:
   build:
     runs-on: ubuntu-latest #setup ubuntu sebagai server/runner
