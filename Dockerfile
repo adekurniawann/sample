@@ -14,8 +14,6 @@ ADD . /app
 WORKDIR /app
 ## we run go build to compile the binary
 ## executable of our Go program
-RUN apt-get update
-RUN apt-get upgrade -y
 RUN go build -o main .
 ## Our start command which kicks off
 ## our newly created binary executable
