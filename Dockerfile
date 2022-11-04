@@ -18,7 +18,11 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 ENV GOBIN /go/bin
+COPY go.mod .
+RUN go mod download
+RUN go mod verify
 
+go install github.com/go-sql-driver/mysql@latest
 RUN go build -o main .
 ## Our start command which kicks off
 ## our newly created binary executable
