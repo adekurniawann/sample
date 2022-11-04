@@ -4,7 +4,7 @@ name: demo-ci-cd
 on:
   push:
     branches:
-      - 'master'
+      - ''
 jobs:
   build:
     runs-on: ubuntu-latest #setup ubuntu sebagai server/runner
@@ -47,4 +47,13 @@ jobs:
           #kubectl get pod -n name_space
           
           #Using Helm-Chart
+          #cd /sample
           #helm upgrade sample --install sample/ -f values.yaml -n $name_space --create-namespace --set image.tag=latest-${{ github.run_number }}
+          
+          #Deploy mysql database server using Helm-Chart
+          #cd /mysql
+          #helm upgrade sample --install sample/ -f values.yaml -n $name_space --create-namespace --set image.tag=latest-${{ github.run_number }}
+          
+          #Deploy configmap
+          #cd 
+          #kubectl apply -f  configmap.yaml
