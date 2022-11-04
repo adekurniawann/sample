@@ -19,7 +19,7 @@ RUN apt-get upgrade -y
 
 ENV GOBIN /go/bin
 
-RUN go get github.com/go-sql-driver/mysql
+RUN go install github.com/go-sql-driver/mysql
 
 RUN go build -o main .
 ## Our start command which kicks off
